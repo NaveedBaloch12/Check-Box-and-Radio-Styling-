@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkBox</title>
+</head>
+
+<style>
+    .check {
+        margin: 2em;
+    }
+
+    label {
+        display: block;
+        margin: .5em 0;
+        display: grid;
+        grid-template-columns: 1em auto;
+        grid-gap: 1em;
+    }
+
+    input[type=checkbox] {
+        appearance: none;
+        margin: 0;
+        -webkit-appearance: none;
+        background-color: none;
+        height: 1.4em;
+        aspect-ratio: 1;
+        border: 2px solid black;
+        padding: 1px;
+        position: relative;
+        cursor: pointer;
+    }
+    input[type=checkbox]:disabled {
+        border-color: gray;
+        cursor: not-allowed;
+    }
+
+    input[type=checkbox]::before {
+        content: "";
+        position: absolute;
+        top: 3px;
+        right: 3px;
+        bottom: 3px;
+        left: 3px;
+        transform: scale(0);
+        transition: all .3s;
+    }
+
+    input[type=checkbox]:checked::before {
+        background-color: purple;
+        transform: scale(1);
+    }
+
+    input[type=checkbox]:disabled::before {
+        background-color: gray;
+    }
+</style>
+
+<body>
+    <div class="check">
+        <label for="male">
+            <input type="checkbox" name="gander" id="male"> Mark One
+        </label>
+
+        <label for="female">
+            <input type="checkbox" name="gander" id="female"> Mark Two
+        </label>
+
+        <label for="other">
+            <input type="checkbox" name="gander" id="other" checked> Mark Three
+        </label>
+    </div>
+
+    <div class="check">
+        <label for="male__dis">
+            <input type="checkbox" name="gander" id="male__dis" disabled> Mark One
+        </label>
+
+        <label for="female__dis">
+            <input type="checkbox" name="gander" id="female__dis" disabled> Mark Two
+        </label>
+
+        <label for="other__dis">
+            <input type="checkbox" name="gander" id="other__dis" disabled checked> Mark Three
+        </label>
+    </div>
+</body>
+
+</html>

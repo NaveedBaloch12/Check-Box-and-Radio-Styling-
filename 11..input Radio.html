@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio</title>
+    <style>
+        .radio {
+            margin: 2em;
+            line-height: 2;
+        }
+
+        label:focus-within{
+            color: purple;
+        }
+
+        label {
+            display: block;
+            font-size: 1.2em;
+            display: grid;
+            grid-template-columns: 1em auto;
+            align-items: center;
+            grid-gap: .5em;
+        }
+
+        input[type=radio] {
+            appearance: none;
+            -webkit-animation: none;
+            margin: 0;
+            background-color: transparent;
+            height: 1.6em;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            border: 3px solid black;
+            position: relative;
+        }
+
+        input[type=radio]::after {
+            content: "";
+            top: 3px;
+            bottom: 3px;
+            left: 3px;
+            right: 3px;
+            background-color: transparent;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            position: absolute;
+            transition: all .4s;
+        }
+        input[type=radio]:checked:after {
+            background-color: purple;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="radio">
+        <label for="male">
+            <input type="radio" name="gander" id="male"> Male
+        </label>
+
+        <label for="female">
+            <input type="radio" name="gander" id="female"> Female
+        </label>
+
+        <label for="other">
+            <input type="radio" name="gander" id="other"> Other
+        </label>
+    </div>
+</body>
+
+</html>
